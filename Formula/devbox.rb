@@ -4,7 +4,7 @@
 class Devbox < Formula
   desc "Portable, Isolated Dev Environments on any Machine"
   homepage "https://www.jetpack.io/devbox"
-  version "0.10.3"
+  version "0.13.7"
   license "Apache-2.0"
 
   if OS.mac? && Hardware::CPU.intel?
