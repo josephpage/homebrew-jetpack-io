@@ -4,33 +4,36 @@
 class Devbox < Formula
   desc "Portable, Isolated Dev Environments on any Machine"
   homepage "https://www.jetpack.io/devbox"
-  version "0.13.7"
   license "Apache-2.0"
+
+  version "0.14.0"
+  # When updating the version here, make sure to also update the SHA-256 checksums below
+  # using the checksums.txt file provided with the GitHub release.
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/jetpack-io/devbox/releases/download/#{version}/devbox_#{version}_darwin_amd64.tar.gz",
       verified: "github.com/jetpack-io/devbox/"
-    sha256 "ba7d10c437e0c2d8b9344c538bda5593d275dc16e9929259b1e8026a9ba85067"
+    sha256 "daaac73377d8beb98d7bbc854b90a8fec2d71984779a314535c166b555ce0a36"
   elsif OS.mac? && Hardware::CPU.arm?
     url "https://github.com/jetpack-io/devbox/releases/download/#{version}/devbox_#{version}_darwin_arm64.tar.gz",
       verified: "github.com/jetpack-io/devbox/"
-    sha256 "aee1581a10dca316b6f2417ba091d647949c713c0622017ad18dbdbab47026f3"
+    sha256 "d0329c00376c83611627860d7884b304880a31bcb69f1ce394244229a7c4c95c"
   elsif OS.linux? && Hardware::CPU.intel? && !Hardware::CPU.is_64_bit?
     url "https://github.com/jetpack-io/devbox/releases/download/#{version}/devbox_#{version}_linux_386.tar.gz",
       verified: "github.com/jetpack-io/devbox/"
-    sha256 "a4712cc6c115173c43c4ada6cba8ac114b39e52893139111e34b9088a5a19aab"
+    sha256 "d729025652894a982e3dfa4f138feefb370b29eda34b1240c0420987637d7d88"
   elsif OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
     url "https://github.com/jetpack-io/devbox/releases/download/#{version}/devbox_#{version}_linux_amd64.tar.gz",
       verified: "github.com/jetpack-io/devbox/"
-    sha256 "785f40afa590b3d367c3017b5b4c7444b44458958db9861707335a54ec444f90"
-  elsif OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/jetpack-io/devbox/releases/download/#{version}/devbox_#{version}_linux_armv7l.tar.gz",
-      verified: "github.com/jetpack-io/devbox/"
-    sha256 "540ec8d60de699ccb25c27bc0a3463509413cbec0e0997d73cb0ffc2fef90ddd"
+    sha256 "30c27a1eefd555481bda2f91b4ccc690a64fdaa87b809506bfdac01fc9ce4232"
   elsif OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/jetpack-io/devbox/releases/download/#{version}/devbox_#{version}_linux_arm64.tar.gz",
       verified: "github.com/jetpack-io/devbox/"
-    sha256 "04020ae5539dc1c24fce940b2c313211bbd1d30e859b1245f291e12ee9488abc"
+    sha256 "5d902434e931e8184ae1fd69bc731a439aa8edcb9b064036773bcc2efbad49f7"
+  elsif OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+    url "https://github.com/jetpack-io/devbox/releases/download/#{version}/devbox_#{version}_linux_armv7l.tar.gz",
+      verified: "github.com/jetpack-io/devbox/"
+    sha256 "849e76b819e35beeafb3021e5fcc0e1816ee477a2242391de97127e40c5382b0"
   else
     odie "Unexpected platform!"
   end
