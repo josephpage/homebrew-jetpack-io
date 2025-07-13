@@ -3,7 +3,7 @@
 
 class Devbox < Formula
   desc "Portable, Isolated Dev Environments on any Machine"
-  homepage "https://www.jetpack.io/devbox"
+  homepage "https://www.jetify.com/devbox"
   license "Apache-2.0"
 
   version "0.14.0"
